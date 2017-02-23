@@ -1,0 +1,70 @@
+
+/* This program prompts the user to input total student number student 
+ * name and score and then find the highest and second highest score .
+ */
+
+
+
+
+package assignment2;
+import java.util.*;
+public class QuesNo14 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the number of students ");
+        int std_num = input.nextInt();
+
+        System.out.println("Enter first student's name: ");
+        String name1 = input.next();
+        System.out.println("Enter first student's score: ");
+        int score1 = input.nextInt();
+
+        System.out.println("Enter second student's name: ");
+        String name2 = input.next();
+        System.out.println("Enter second student's score: ");
+        int score2 = input.nextInt();
+
+        if(score2 > score1)
+        {
+            String tempname = name1;
+            int tempscore = score1;
+            score1 = score2;
+            name1 = name2;
+
+            score2 = tempscore;
+            name2 = tempname;
+        }
+
+        for(int i = 0; i < std_num - 2; i++)
+        {
+            System.out.println("Enter student name ");
+            String name = input.next();
+            System.out.println("Enter student's score ");
+            int score = input.nextInt();
+
+            if(score > score1)
+            {
+                score2 = score1;
+                name2 = name1;
+                score1 = score;
+                name1 = name;
+            }
+
+            else if(score > score2)
+            {
+                score2 = score;
+                name2 = name;
+            }
+
+        }
+
+        System.out.println("The first highest is " + name1 + " and score " + score1);
+        System.out.println("The Second highest is " + name2 + " and score " + score2);
+    }
+
+	}
+
+
